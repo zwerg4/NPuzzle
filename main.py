@@ -45,6 +45,7 @@ def puzzle_from_file(filename):
 def _main():
 	filename, method = parse_args()
 	initial_state, desired_state = puzzle_from_file(filename)
+	print(initial_state)
 	
 	start_time = time.process_time() # does not include time process was swapped out
 	number_of_nodes, solution = strategy_by_name(method)(initial_state, desired_state)
@@ -53,6 +54,8 @@ def _main():
 	print(filename, method, number_of_nodes)
 
 	convert(initial_state, desired_state,solution)
+
+	print(solution)
 
 if __name__ == "__main__":
 	_main()
