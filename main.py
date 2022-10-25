@@ -5,6 +5,7 @@ This program only supports python 3.
 from sys import argv
 from os import path
 from search_strategies import strategy_by_name
+from exportAsField import convert
 import time
 
 def parse_args():
@@ -50,11 +51,8 @@ def _main():
 	print("Time taken: " + str(time.process_time() - start_time) + " secs")
 	
 	print(filename, method, number_of_nodes)
-	if solution != None:
-		for action in solution: 
-			print(action, end='')
-	else:
-		print("No solution found.")
+
+	convert(initial_state, desired_state,solution)
 
 if __name__ == "__main__":
 	_main()
