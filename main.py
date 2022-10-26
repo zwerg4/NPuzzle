@@ -53,7 +53,7 @@ def _main():
 	
 	print(filename, method, number_of_nodes)
 
-	convert(initial_state, desired_state,solution)
+	convert(filename,solution)
 
 	print(solution)
 
