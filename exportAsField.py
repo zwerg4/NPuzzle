@@ -31,7 +31,7 @@ def convert(filename,steps):
                         else:   
                             print("FAIL RIGHT")
                     case 'Left;':
-                        if index - 1 > 0:
+                        if index - 1 >= 0:
                             old = field[index-1]
                             field[index-1] = '0'
                             field[index] = old
@@ -42,7 +42,7 @@ def convert(filename,steps):
                         else:
                             print("FAIL LEFT")
                     case 'Up;':
-                        if index - width > 0:
+                        if index - width >= 0:
                             old = field[index - width]
                             field[index - width] = '0'
                             field[index] = old
@@ -65,4 +65,6 @@ def convert(filename,steps):
                             print("FAIL DOWN")
                     case _:
                         print("FAIL ALL")
+
+        file.write(str(steps) + "\n")
 
